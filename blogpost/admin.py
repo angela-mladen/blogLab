@@ -41,7 +41,7 @@ class BlogPostAdmin(admin.ModelAdmin):
 
     def save_model(self, request, obj, form, change):
         if obj:
-            obj.author=BlogUser.objects.get(user=request.user)
+            obj.user=BlogUser.objects.get(user=request.user)
             super().save_model(request, obj, form, change)
 
 class CommentAdmin(admin.ModelAdmin):

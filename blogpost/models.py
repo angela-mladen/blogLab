@@ -13,7 +13,7 @@ class BlogUser(models.Model):
 
 class BlogPost(models.Model):
     title=models.CharField(max_length=50)
-    user = models.ForeignKey(BlogUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(BlogUser, on_delete=models.CASCADE,null=True)
     contents=models.TextField()
     files=models.FileField(upload_to="filesUploaded/")
     dateCreated=models.DateField()
