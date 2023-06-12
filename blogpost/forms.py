@@ -7,12 +7,6 @@ class PostForm(forms.ModelForm):
         super(PostForm, self).__init__(*args, **kwargs)
         for field in self.visible_fields():
             field.field.widget.attrs["class"] = "form-control"
-           # self.fields['date'].widget=forms.widgets.DateInput(
-            #    attrs={
-            #        'type':'date','placeholder':'yyyy-mm-dd(DOB)',
-              #      'class':'form-control'
-             #   }
-           # )
 
     class Meta:
         model = BlogPost
